@@ -1,0 +1,13 @@
+.square{
+	height: 100px;
+	margin: 10px;
+	width: 100px;
+	border:1px solid #000;
+	display: inline-block;
+}
+.square:nth-child(2n){
+	background: blue;
+}
+.square:nth-child(2n+1){
+	background: red;
+}

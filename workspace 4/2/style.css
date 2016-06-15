@@ -1,0 +1,36 @@
+body{
+  font-family:"Helvetica Neue";
+  font-size:16px;
+  line-height: 1.5;
+  background: #edeff0;
+
+}
+
+.container_inter{
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  width: 700px;
+  margin-left: 425px;
+
+}
+h1{
+  font-size:28px;
+  color: #384047
+}
+h2{
+  font-size: 16px;
+}
+
+p{
+  color: #b2bac2;
+
+}
+
+.tra > div{
+
+display: inline-block;
+box-sizing: border-box;
+width: 48%;
+}
+
