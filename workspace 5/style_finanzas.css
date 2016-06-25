@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+  }
+
+.h1, .h2, .h3, h1, h2, h3{
+  margin-top: 0px;
+}
+
+.table{
+  width: 100%;
+}
+
+.fila1{
+width: 8%
+}
+.fila2{
+width: 15%
+}
+
+.fila3{
+width: 80%;
+text-align: right;
+padding-right: 60px !important;
+
+}
+.container_style{
+margin: 10px;
+padding: 10px;
+}
+
+.contendiv{
+
+  display: inline-block;
+  margin-left: 750px;
+}
