@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+ <!--calculadora -->
+  <div>
+    <h3>Calculadora basica</h3>
+    <div>
+      <input id="op1"  type="number" value="" placeholder="operador 1" style=" width:90px; "/>
+      <input id="op2"  type="number" value="" placeholder="operador 2" style=" width:90px; "/>
+    </div>
+    <div>
+    <label >Resultado: </label>
+      <label  id="resultado"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="sumar" onclick="sumar()"   />
+      <input type="submit" value="restar" onclick="restar()" />
+      <input type="submit" value="multiplicar" onclick="multiplicar()"/>
+      <input type="submit" value="dividir" onclick="dividir()" />
+    </div>
+  </div>
+  <!--tamaño cadena -->
+  <div>
+    <h3>Tamaño de la cadena</h3>
+    <div>
+      <input id="cadena"  type="" value="" placeholder="cadena" style=" width:90px; "/>
+    </div>
+    <div>
+    <label >Tamaño cadena: </label>
+      <label  id="long"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="calcular" onclick="longitud()"   />
+    </div>
+  </div>
+  <!--fizzbuzz -->
+  <div>
+    <h3>Multiplo de 3 y 5</h3>
+    <div>
+      <input id="argumento"  type="number" value="" placeholder="argumento numero" style=" width:130px; "/>
+    </div>
+    <div>
+    <label >Retorno: </label>
+      <label  id="ret"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="calcular" onclick="fizzbuzz()"   />
+    </div>
+  </div>
+  <!-- fibonacci  -->
+  <div>
+    <h3> serie fibonacci</h3>
+    <div>
+      <input id="seriefibo"  type="number" value="" placeholder="valor de la posición" style=" width:130px; "/>
+    </div>
+    <div>
+      <label >Valor de la posicion </label>
+      <label  id="vfibo"></label>
+      <label >es: </label>
+      <label  id="vpfibo"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="calcular" onclick=" fibonacci ()"   />
+    </div>
+  </div>
+<!-- multiplier -->
+  <div>
+    <h3> ejercicio multiplier</h3>
+    <div>
+      <label >posic [0]</label>  <label >posic [1]</label>
+      <label >posic [2]</label>  <label >posic [3]</label>  <label >multiplicador</label>
+    </div>
+    <div>
+      <input id="seriefibo0"  type="number" value="" placeholder="pos[0]" style=" width:50px; "/>
+      <input id="seriefibo1"  type="number" value="" placeholder="pos[1]" style=" width:50px; "/>
+      <input id="seriefibo2"  type="number" value="" placeholder="pos[2]" style=" width:50px; "/>
+      <input id="seriefibo3"  type="number" value="" placeholder="pos[3]" style=" width:50px; "/>
+      <input id="seriefibo4"  type="number" value="" placeholder="multiplicador " style=" width:90px; "/>
+    </div>
+    <div>
+      <label >Nuevo arreglo : </label>
+      <label  id="arreglo"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="calcular" onclick=" multiplier()"   />
+    </div>
+  </div>
+
+  <div>
+    <h3> ejercicio ciclo</h3>
+    <div>
+      <label >Variable de 0-20 indicando cual es par o impar</label>
+      <label  id="ciclo"></label>
+    </div>
+    <div>
+    <br>
+      <input type="submit" value="calcular" onclick=" ciclo()"   />
+    </div>
+  </div>
+
+
+<script>
+//---------------------------primer ejercicio
+function sumar() {
+
+  var oper1 = document.getElementById('op1').value;
+  var oper2 = document.getElementById('op2').value;
+  var s12=parseFloat(oper2) + parseFloat(oper1);
+  imprimir(s12);
+
+}
+function restar() {
+
+  var oper1 = document.getElementById('op1').value;
+  var oper2 = document.getElementById('op2').value;
+  var s12=parseFloat(oper1) - parseFloat(oper2);
+  imprimir(s12);
+}
+function multiplicar() {
+
+  var oper1 = document.getElementById('op1').value;
+  var oper2 = document.getElementById('op2').value;
+  var s12=parseFloat(oper1) * parseFloat(oper2);
+  imprimir(s12);
+}
+function dividir() {
+
+  var oper1 = document.getElementById('op1').value;
+  var oper2 = document.getElementById('op2').value;
+  var s12=parseFloat(oper1) / parseFloat(oper2);
+  imprimir(s12);
+}
+
+function imprimir(operacion){
+  document.getElementById('resultado').innerHTML=operacion;
+  //alert(operacion );
+
+}
+//--------------------funciones para el segundo ejercicio
+function longitud (){
+  var cadena1 = document.getElementById('cadena').value;//por medio de el id
+  var n = cadena1.length;
+  //document.getElementById('igual').innerHTML='=';
+  //alert(n);
+  document.getElementById('long').innerHTML=n;
+
+}
+//------------------funciones para el tercer ejercicio
+function fizzbuzz(){
+  var cr = document.getElementById('argumento').value;//por medio de el id
+
+  if ( (cr%3 == 0) && (cr%5 == 0) ){
+    document.getElementById('ret').innerHTML="fizzbuzz";
+  } else {
+      if (cr%3 == 0) {
+      document.getElementById('ret').innerHTML="fizz";
+      } else if (cr%5 == 0){
+
+      document.getElementById('ret').innerHTML="buzz";
+      } else{
+         document.getElementById('ret').innerHTML=cr;
+      }
+    }
+}
+///funciones para el cuarto ejercicio
+function fibonacci(){
+  //var aux =[0];
+  var aux = 0;
+  var Result_f = 0;
+  var Num1 = 1;
+  var cr1 = document.getElementById('seriefibo').value;//por medio de el id
+  var cr2= parseInt(cr1);
+  //var cars = ["BMW", "Volvo", "Saab", "Ford"];
+  //var text = "";
+  var i;
+  for (i = 0; i < cr1; i++) {
+      //text += cars[i] + "<br>";
+      Result_f = Num1 + aux;
+      aux=Num1;
+      Num1=Result_f;
+  }
+ //alert(aux);
+ document.getElementById('vfibo').innerHTML=cr1;
+ document.getElementById('vpfibo').innerHTML=aux;
+
+}
+///funciones para el quinto ejercicio
+
+function multiplier(){
+    var s0 = document.getElementById('seriefibo0').value;//por medio de el id
+    var s1 = document.getElementById('seriefibo1').value;//por medio de el id
+    var s2 = document.getElementById('seriefibo2').value;//por medio de el id
+    var s3 = document.getElementById('seriefibo3').value;//por medio de el id
+    var s4 = document.getElementById('seriefibo4').value;//por medio de el id
+    var vectorS =[s0,s1,s2,s3];
+
+
+function multiplicador(vectorS,s4){
+  var dobles  = vectorS.map(function(num) {
+                return num * s4;
+                });
+  return dobles;
+}
+
+document.getElementById('arreglo').innerHTML=multiplicador(vectorS,s4);
+
+
+}
+
+
+
+
+//----------------------------------------
+
+function ciclo(){
+ for (var i = 0; i <=20; i++) {
+     if (i%2==0) {
+     alert(i + " numero par");
+     }else{
+      alert(i + " numero impar");
+     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

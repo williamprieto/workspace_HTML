@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promedio</title>
+  <h2>promedio de un vector ingresado</h2>
+  
+<br>
+</head>
+<body>
+
+
+<script>
+function sumame(Things) {
+  var suma =0;
+  for (var i = 0 ; i <= Things.length-1; i++) {
+   //document.write(i);
+    suma = Things[i]+suma;
+    //document.write(suma);
+  }
+  var  promedio=suma/Things.length	;
+  return promedio;
+}
+
+document.write(sumame([2,3,5]));
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typeExtractor</title>
+  <h2>Retorno objeto </h2>
+
+
+</head>
+<body>
+
+
+<script>
+function typeExtractor(array) {
+   var result= {};
+   result.string=[];
+   result.number=[];
+   result.boolean=[];
+
+    for (var i = 0; i < array.length ; i++) {
+       console.log(typeof array[i]);
+       if (typeof array[i]=="string") {
+        result.string.push(array[i]);
+       } else if (typeof array[i]=="number"){
+        result.number.push(array[i]);
+       }else if (typeof array[i]=="boolean"){
+        result.boolean.push(array[i]);
+      }
+
+    }
+    console.log(result);
+    return result;
+  }
+
+var vector = typeExtractor([ 5, 2, "hello", 3, 4, "world", true, 9, false ]);
+
+document.write("String: "+ "<br>"+ vector.string + "<br>");
+document.write("Number: "+ "<br>"+ vector.number + "<br>");
+document.write("boolean: "+ "<br>"+ vector.boolean);
+
+
+
+
+</script>
+
+</body>
+</html>
