@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Lista de Tareas</h1>
+
+    <input type="text" id="input" placeholder="Cual es tu tarea?">
+    <ul class="todo-list">
+    </ul>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script >
+    $( document ).ready(function() {
+      $('#input').keypress(function(e) {
+
+        if(e.which == 13) {
+          var oper2 = $("#input").val();
+          if($("#input").val()==""){
+            alert("Ingresar algo por favor");
+          }else{
+            var oper1 = $("#input").val("");
+            //alert(oper2);
+            var lista = "<li><input type='checkbox' class='myCheck'>"+oper2+"<span class='equis' style='float: right;display:none'>X</span></li>"
+            $(".todo-list").append(lista);
+            $("li").hover(function(){
+                $(this).css("background-color", "#eee");
+                $(this).children('.equis').css({
+                  display: 'block'
+                });
+
+            }, function(){
+                $(this).css("background-color", "white");
+                $(this).children('.equis').css({
+                  display: 'none'
+                });
+
+              });
+
+            $('.myCheck').change(function() {
+                if($(this).is(":checked")) {
+                    $(this).parent("li").css("text-decoration","line-through");
+
+                }else{
+                    $(this).parent("li").css("text-decoration","none");
+
+                }
+
+            });
+            $( ".equis" ).click(function() {
+              $(this).parent("li").remove();
+            });
+
+          }
+
+        //alert('You pressed enter!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
